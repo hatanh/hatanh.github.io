@@ -1,0 +1,13 @@
+#top-bar {
+    background-color: slategray;
+}
+
+#mid-area {
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: salmon;
+}
+
+#bottom-bar {
+    background-color: rgb(53, 62, 70);
+}
