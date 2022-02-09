@@ -25,6 +25,17 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
+
+    #top-bar a {
+        background-color: rgba(172, 255, 47, 0.815);
+        text-align: center;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin: auto 5px auto 5px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: black;
+    }
 }
 
 #top-bar a {
