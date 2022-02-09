@@ -38,15 +38,17 @@ body {
     }
 }
 
-#top-bar a {
-    background-color: rgba(172, 255, 47, 0.815);
-    text-align: center;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    margin: auto 10px auto 10px;
-    border-radius: 15px;
-    text-decoration: none;
-    color: black;
+@media (min-width: 701px) {
+    #top-bar a {
+        background-color: rgba(172, 255, 47, 0.815);
+        text-align: center;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin: auto 10px auto 10px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: black;
+    }
 }
 
 
