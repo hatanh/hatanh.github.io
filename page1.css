@@ -1,0 +1,31 @@
+#board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 40vw;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+}
+
+@media (max-width: 600px) {
+    #board {
+        height: 80vw;
+        width: 80vw;
+    }
+}
+
+@keyframes tictactoe-buttons {
+    from {background-color: ghostwhite}
+    to {background-color: paleturquoise}
+}
+
+#board button {
+    background-color: ghostwhite;
+}
+
+#board button:hover {
+    animation-name: tictactoe-buttons;
+    animation-duration: 750ms;
+}
