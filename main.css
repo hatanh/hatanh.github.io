@@ -1,3 +1,8 @@
+:root {
+    --theme-color-green: rgba(172, 255, 47, 0.815);
+    --theme-color-blue: rgba(24, 186, 207, 0.815);
+}
+
 body {
     margin: 0px;
 }
@@ -27,7 +32,7 @@ body {
 }
 
 #top-bar a {
-    background-color: rgba(172, 255, 47, 0.815);
+    background-color: var(--theme-color-green);
     border-radius: 15px;
     text-align: center;
     text-decoration: none;
@@ -36,6 +41,16 @@ body {
     margin-bottom: 3px;
     padding-top: 3px;
     
+}
+
+@keyframes top-buttons {
+    from {background-color: var(--theme-color-green)}
+    to {background-color: var(--theme-color-blue)}
+}
+
+#top-bar a:hover {
+    animation-name: top-buttons;
+    animation-duration: 750ms;
 }
 
 
@@ -50,7 +65,7 @@ body {
 }
 
 #bottom-bar {
-    background-color: rgb(14, 17, 19);
+    background-color: black;
     font-family:'Courier New', Courier, monospace; 
     font-size: larger;
     color: aliceblue;
@@ -64,4 +79,10 @@ body {
 
 #wrapper div {
     padding: 5px;
+}
+
+#page-title {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: rgb(235, 46, 46);
 }
