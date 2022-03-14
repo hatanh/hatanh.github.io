@@ -30,6 +30,42 @@
         <link rel="stylesheet" href="page1.css">
     </head>
     <body>
+        <script>
+            let board = [
+                ["nw", "n", "ne"],
+                ["w", "c", "e"],
+                ["sw", "s", "se"]
+            ];
+
+            let symbol = "X";
+
+            function play(y, x) {
+                const square = document.getElementById(board[y][x]);
+
+                square.setAttribute("disabled", "true");
+                square.style.background = symbol == "X" ? "#5899e2" : "#274060";
+
+                symbol = symbol == "X" ? "Y" : "X";
+
+
+            }
+
+            // TODO: implement function to check for draw or win within the board
+            function checkBoard() {
+
+            }
+
+            //TODO: disable board if a win or draw is found
+            function disableBoard() {
+
+            }
+
+            //TODO: reset board to initial conditions
+            function resetBoard() {
+
+            }
+        </script>
+
         <div id="wrapper">
             <div id="top-bar">
                 <h3>Tic</h3>
@@ -49,17 +85,17 @@
                 </p>
 
                 <div id="board">
-                    <button>  </button>
-                    <button>  </button>
-                    <button>  </button>
+                    <button id="nw" onclick="play(0, 0)">  </button>
+                    <button id="n" onclick="play(0, 1)">  </button>
+                    <button id="ne" onclick="play(0, 2)">  </button>
 
-                    <button>  </button>
-                    <button>  </button>
-                    <button>  </button>
+                    <button id="w" onclick="play(1, 0)">  </button>
+                    <button id="c" onclick="play(1, 1)">  </button>
+                    <button id="e" onclick="play(1, 2)">  </button>
 
-                    <button>  </button>
-                    <button>  </button>
-                    <button>  </button>
+                    <button id="sw" onclick="play(2, 0)">  </button>
+                    <button id="s" onclick="play(2, 1)">  </button>
+                    <button id="se" onclick="play(2, 2)">  </button>
                 </div>
 
                 <p>
