@@ -4,14 +4,44 @@
     grid-template-rows: 1fr 1fr 1fr;
     height: 40vw;
     width: 40vw;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 0 auto;
     background-color: black;
+}
+
+#board-textbox {
+    width: 40vw;
+    margin: 0 auto 0 auto;
+    background-color: slategray;
+    margin-bottom: 5px;
+}
+
+#board-textbox p {
+    margin: 0;
+    background-color: black;
+    color: aliceblue;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#board-textbox p::after {
+    content: "_";
+    display: inline-block;
+    opacity: 1;
+    animation: insertion-point 1s step-end infinite
+}
+
+@keyframes insertion-point {
+    0% {opacity: 1}
+    50% {opacity: 0}
 }
 
 @media (max-width: 600px) {
     #board {
         height: 80vw;
+        width: 80vw;
+    }
+
+    #board-textbox {
         width: 80vw;
     }
 }

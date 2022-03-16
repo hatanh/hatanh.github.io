@@ -31,40 +31,102 @@
     </head>
     <body>
         <script>
-            let board = [
+            const board = [
                 ["nw", "n", "ne"],
                 ["w", "c", "e"],
                 ["sw", "s", "se"]
-            ];
+            ]
 
-            let symbol = "X";
+            let game = [
+                ["1", "2", "3"],
+                ["4", "5", "6"],
+                ["7", "8", "9"]
+            ]
+
+            let symbol = "X"
 
             function play(y, x) {
-                const square = document.getElementById(board[y][x]);
+                const square = document.getElementById(board[y][x])
 
-                square.setAttribute("disabled", "true");
-                square.style.background = symbol == "X" ? "#5899e2" : "#274060";
+                square.setAttribute("disabled", "true")
+                square.style.background = symbol == "X" ? "#5899e2" : "#274060"
+                game[y][x] = symbol
+                if (checkGame(symbol)) {
+                    document.querySelector("#board-textbox p").innerHTML = `the winner is ${symbol == "X" ? "light blue" : "dark blue"}`
+                    disableGame()
+                }
 
-                symbol = symbol == "X" ? "Y" : "X";
+                if (isDraw()) {
+                    document.querySelector("#board-textbox p").innerHTML = "the game has drawn"
+                }
 
-
+                symbol = symbol == "X" ? "O" : "X"
             }
 
-            // TODO: implement function to check for draw or win within the board
-            function checkBoard() {
+            function checkGame(symbol) {
+                if (game[0][0] == game[1][1] && game[1][1] == game[2][2] ||
+                game[0][2] == game[1][1] && game[1][1] == game[2][0])
+                    return true
 
+                for (let i = 0 ; i < 3; i++) {
+                    if (game[i][0] == game[i][1] && game[i][1] == game[i][2])
+                        return true
+                }
+
+                for (let i = 0; i < 3; i++) {
+                    if (game[0][i] == game[1][i] && game[1][i] == game[2][i])
+                        return true
+                }
+
+                return false
             }
 
-            //TODO: disable board if a win or draw is found
-            function disableBoard() {
+            function disableGame() {
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        const square = document.getElementById(board[i][j])
+                        square.setAttribute("disabled", "true")
 
+                        if (game[i][j] != "X" && game[i][j] != "O")
+                            square.style.backgroundColor = "black"
+
+
+                    }
+                }
             }
 
-            //TODO: reset board to initial conditions
-            function resetBoard() {
+            function resetGame() {
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        const square = document.getElementById(board[i][j])
+                        square.removeAttribute("disabled")
 
+                        square.style.backgroundColor = "ghostwhite"
+
+                    }
+                }
+
+                game = [
+                    ["1", "2", "3"],
+                    ["4", "5", "6"],
+                    ["7", "8", "9"]
+                ]
+                symbol = "X"
+    
+                document.querySelector("#board-textbox p").innerHTML = "hi"
             }
-        </script>
+
+            function isDraw() {
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        if (game[i][j] != "X" && game[i][j] != "O") 
+                            return false
+                    }
+                }
+
+                return true
+            }
+            </script>
 
         <div id="wrapper">
             <div id="top-bar">
@@ -80,10 +142,6 @@
             <div id="mid-area">
                 <h1 id="page-title">This is page 1.</h1> <br>
 
-                <p>
-                    The buttons don't do anything yet
-                </p>
-
                 <div id="board">
                     <button id="nw" onclick="play(0, 0)">  </button>
                     <button id="n" onclick="play(0, 1)">  </button>
@@ -98,18 +156,18 @@
                     <button id="se" onclick="play(2, 2)">  </button>
                 </div>
 
-                <p>
-                    but they might soon...
-                </p>
+                <div id="board-textbox">
+                    <p onclick="resetGame()">hi</p>
+                </div>
             </div>
     
             <div id="bottom-bar">
                 <div>
-                    <p>hatanh</p>
-                    <p>that is me</p>
-                    <p>wassup</p>
-                    <p>...</p> <br>
-                    <p>duck ---></p>
+                    <p>you can click</p>
+                    <p>on the textbox</p>
+                    <p>to reset the game</p>
+                    <p></p> <br>
+                    <p></p>
                 </div>
                 <img src="images\ccduck_500x500.jpg" alt="random pic of a creative commons duck" height="250px">
             </div>
