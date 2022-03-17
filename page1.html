@@ -54,9 +54,7 @@
                 if (checkGame(symbol)) {
                     document.querySelector("#board-textbox p").innerHTML = `the winner is ${symbol == "X" ? "light blue" : "dark blue"}`
                     disableGame()
-                }
-
-                if (isDraw()) {
+                } else if (isDraw()) {
                     document.querySelector("#board-textbox p").innerHTML = "the game has drawn"
                 }
 
