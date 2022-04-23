@@ -14,26 +14,36 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 9vw;
-    height: 9vw;
+    width: 8vw;
+    height: 8vw;
     z-index: 2;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     padding: 3px;
-    transition: 500ms ease;
+    transition: 750ms ease;
     display: grid;
-    grid-template-columns: 9vw auto;
-    grid-template-rows: 9vw auto;
+    grid-template-columns: 8vw auto;
+    grid-template-rows: 8vw auto;
+    box-shadow: 3px 3px 20px 2px black;
 }
 
-#hover-menu:hover {
-    width: 60vw;
-    height: 30vw;
+@media (max-width: 599px) {
+    #hover-menu:hover {
+        width: 40vw;
+        height: 80vw;
+    }
+}
+
+@media (min-width: 600px) {
+    #hover-menu:hover {
+        width: 60vw;
+        height: 20vw;
+    }
 }
 
 #hover-menu img {
-    width: 6vw;
-    height: 6vw;
+    width: 5vw;
+    height: 5vw;
     margin: auto;
 }
 
@@ -45,7 +55,7 @@ body {
 
 #colorboard div {
     height: 100vh;
-    transition: 500ms ease;
+    transition: 750ms ease;
     display: grid;
     align-items: center;
     justify-content: center;
