@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hatanh.rainbow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicons//apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicons//favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicons//favicon-16x16.png">
     <link rel="manifest" href="favicons//site.webmanifest">
-</head>
-<body>
     <script>
-        const text1 = "hello.u";
-        const text2 = "world.i";
+        const text1 = "       ";
+        const text2 = "HATANH-";
         const currentText = [1, 1, 1, 1, 1 ,1, 1]
 
         function changeText(num) {
@@ -23,7 +24,7 @@
 
             if (currentText[num] == 1) {
                 block.innerText = text2.charAt(num)
-                block.style = "background-color: white; color: black;"
+                block.style = "background-color: var(--color-white); color: black;"
                 currentText[num] = 0
             } else {
                 block.innerText = text1.charAt(num)
@@ -31,20 +32,32 @@
                 currentText[num] = 1
             }
         }
+
+        function honk() {
+            horn = new Audio("audio/party-horn.wav")
+
+            horn.play();
+        }
     </script>
+</head>
+<body>
     <div id="hover-menu">
-        <img src="./images/menu-symbol-svgrepo-com.svg" alt="menu bar">
+        <p>MENU</p>
+        <div id="navigation">
+            <button>...</button>
+            <button><a href="pages\page2\index.html">NEXT</a></button>
+            <button onclick="honk()">🎁</button>
+        </div>
     </div>
 
     <div id="colorboard">
-        <div id="block1" onclick="changeText(0)">h</div>
-        <div id="block2" onclick="changeText(1)">e</div>
-        <div id="block3" onclick="changeText(2)">l</div>
-        <div id="block4" onclick="changeText(3)">l</div>
-        <div id="block5" onclick="changeText(4)">o</div>
-        <div id="block6" onclick="changeText(5)">.</div>
-        <div id="block7" onclick="changeText(6)">u</div>
-
+        <div id="block1" onclick="changeText(0)"></div>
+        <div id="block2" onclick="changeText(1)"></div>
+        <div id="block3" onclick="changeText(2)"></div>
+        <div id="block4" onclick="changeText(3)"></div>
+        <div id="block5" onclick="changeText(4)"></div>
+        <div id="block6" onclick="changeText(5)"></div>
+        <div id="block7" onclick="changeText(6)"></div>
     </div>
 </body>
 </html>

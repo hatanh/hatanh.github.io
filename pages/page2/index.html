@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@500&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navigation-bar">
+        <p>RAIN</p>
+        <div></div>
+        <button><a href="../../index.html">PREV</a></button>
+        <button><a>NEXT</a></button>
+        <button onclick="playQuack()">🦆</button>
+    </div>
+    <div id="content-body">
+        <div id="part1">
+            <p>Free lemonade and cookies for everyone.</p>
+        </div>
+        <div id="part2">
+            <img src="../../images/ccduck_500x500.jpg">
+        </div>
+    </div>
+    <div id="bottom-bar">
+
+    </div>
+</body>
+<script>
+    function playQuack() {
+        const quack = new Audio("quack_5.mp3")
+        quack.play()
+    }
+</script>
+</html>
