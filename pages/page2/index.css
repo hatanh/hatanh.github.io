@@ -55,7 +55,8 @@ a {
 @media (max-width: 699px) {
     #part1 {
         grid-template-columns: 1fr;
-        font-size: 4rem;
+        font-size: 3.5rem;
+        padding: 0px 10vw 0px 10vw;
     }
 
     img {
