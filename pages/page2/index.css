@@ -52,6 +52,17 @@ a {
     font-size: 5rem;
 }
 
+@media (max-width: 599px) {
+    #part1 {
+        grid-template-columns: 1fr;
+        font-size: 4rem;
+    }
+
+    img {
+        width: 400px;
+    }
+}
+
 #part2 {
     display: grid;
     align-items: center;

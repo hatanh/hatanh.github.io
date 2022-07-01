@@ -36,6 +36,8 @@ a {
 
 #hover-menu:hover {
     color: var(--color-white);
+    width: 48vh;
+    height: 24vh;
 }
 
 #hover-menu:hover button {
@@ -69,13 +71,6 @@ button {
     #hover-menu:hover {
         width: max(7rem, 18vh);
         height: max(10rem, 27vh);
-    }
-}
-
-@media (min-width: 600px) {
-    #hover-menu:hover {
-        width: 48vh;
-        height: 24vh;
     }
 }
 
