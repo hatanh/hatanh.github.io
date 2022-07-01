@@ -52,7 +52,7 @@ a {
     font-size: 5rem;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 699px) {
     #part1 {
         grid-template-columns: 1fr;
         font-size: 4rem;
