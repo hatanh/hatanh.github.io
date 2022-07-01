@@ -72,6 +72,14 @@ button {
         width: max(7rem, 18vh);
         height: max(10rem, 27vh);
     }
+
+    #colorboard div {
+        font-size: 3rem;
+    }
+
+    #colorboard div:hover {
+        font-size: 2rem;
+    }
 }
 
 #colorboard {
